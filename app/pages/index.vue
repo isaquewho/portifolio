@@ -13,7 +13,7 @@ const projects = [
     link: 'https://nexus-life-os-web.vercel.app/pt-BR',
     role: 'Creator & Lead Developer',
     video: '/nexus_life_os_demo.mp4',
-    webm: ''
+    webm: '/nexus_life_os_demo.webm'
   },
   {
     title: 'CASA DE KISAVITA',
@@ -22,16 +22,8 @@ const projects = [
     link: 'https://restaurante-kisavita.vercel.app',
     role: 'Full Stack Developer',
     video: '/kisavita_demo.mp4',
-    webm: '',
+    webm: '/kisavita_demo.webm',
     image: '/kisavita_mockup.png'
-  },
-  {
-    title: 'DEVELOPER PORTFOLIO',
-    description: 'Interactive personal showroom built with a modern design system, smooth scroll physics, custom cursor mask reveals, and dynamic elements.',
-    stack: ['Nuxt 3', 'Vue 3', 'TypeScript', 'GSAP', 'Lenis Scroll', 'Tailwind CSS v4'],
-    link: 'https://github.com/isaquewho/portifolio',
-    role: 'Creator & Frontend Developer',
-    image: '/isaque_profile.png'
   }
 ]
 
@@ -68,6 +60,26 @@ const handleMouseEnter = () => {
 }
 
 const handleMouseLeave = () => {
+  isHoveringPhoto.value = false
+}
+
+// Mobile Touch Support for Hero Photo mask reveal
+const handleTouchMove = (e: TouchEvent) => {
+  if (!photoContainer.value) return
+  // Prevent default scroll behavior when dragging on the image
+  e.preventDefault()
+  const touch = e.touches[0]
+  const rect = photoContainer.value.getBoundingClientRect()
+  mouseX.value = touch.clientX - rect.left
+  mouseY.value = touch.clientY - rect.top
+}
+
+const handleTouchStart = (e: TouchEvent) => {
+  isHoveringPhoto.value = true
+  handleTouchMove(e)
+}
+
+const handleTouchEnd = () => {
   isHoveringPhoto.value = false
 }
 
@@ -241,11 +253,14 @@ onUnmounted(() => {
         <div class="hero-photo w-full flex justify-center mb-10">
           <div 
             ref="photoContainer"
-            class="relative w-full max-w-[320px] aspect-[3/4.2] group overflow-hidden cursor-crosshair rounded-2xl border border-white/5 shadow-2xl"
-            style="-webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%); mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);"
+            class="relative w-full max-w-[320px] aspect-[3/4.2] group overflow-hidden cursor-crosshair rounded-2xl border border-white/5 shadow-2xl select-none"
+            style="-webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%); mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%); touch-action: none;"
             @mousemove="handleMouseMove"
             @mouseenter="handleMouseEnter"
             @mouseleave="handleMouseLeave"
+            @touchmove="handleTouchMove"
+            @touchstart="handleTouchStart"
+            @touchend="handleTouchEnd"
           >
             <!-- Background Image: Grayscale -->
             <img 
