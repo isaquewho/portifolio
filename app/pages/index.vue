@@ -8,19 +8,19 @@ gsap.registerPlugin(ScrollTrigger)
 const projects = [
   {
     title: 'NEXUS LIFE OS',
-    description: 'Personal operating system with integrated AI assistant (Nexus Atlas AI), finance automation (Safe to Spend), and gamified habit tracking.',
+    description: 'Sistema operacional pessoal com assistente de IA integrado (Nexus Atlas AI), automação financeira (Safe to Spend) e rotina gamificada.',
     stack: ['Next.js 16', 'React 19', 'PostgreSQL', 'Drizzle ORM', 'Clerk', 'Tailwind CSS v4'],
     link: 'https://nexus-life-os-web.vercel.app/pt-BR',
-    role: 'Creator & Lead Developer',
+    role: 'Criador & Desenvolvedor Principal',
     video: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/nexus_life_os_demo.mp4',
     webm: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/nexus_life_os_demo.webm'
   },
   {
     title: 'CASA DE KISAVITA',
-    description: 'Single Page Application delivery system with an administrative dashboard, real-time menu management, and direct WhatsApp ordering.',
+    description: 'Sistema de delivery Single Page Application com painel administrativo, gestão de cardápio em tempo real e pedidos diretos no WhatsApp.',
     stack: ['JavaScript (ES6+)', 'HTML5', 'CSS3', 'Firebase Firestore'],
     link: 'https://restaurante-kisavita.vercel.app',
-    role: 'Full Stack Developer',
+    role: 'Desenvolvedor Full Stack',
     video: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/kisavita_demo.mp4',
     webm: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/kisavita_demo.webm',
     image: '/kisavita_mockup.png'
@@ -176,7 +176,7 @@ onMounted(() => {
     const timeEl = document.getElementById('live-time')
     if (timeEl) {
       const now = new Date()
-      timeEl.innerText = now.toLocaleTimeString('en-US', { hour12: true })
+      timeEl.innerText = now.toLocaleTimeString('pt-BR', { hour12: false })
     }
   }
   clockInterval = setInterval(updateClock, 1000)
@@ -236,17 +236,17 @@ onUnmounted(() => {
       <div class="max-w-4xl mx-auto w-full flex flex-col items-center z-10 relative text-center">
         <!-- Main Headline -->
         <h1 class="hero-title text-[clamp(2.5rem,6vw,5.5rem)] font-display font-extrabold tracking-tighter leading-none text-white max-w-5xl overflow-hidden mb-6">
-          <span class="inline-block hero-title-word">DESIGNING </span>
-          <span class="inline-block hero-title-word text-brand-accent">&nbsp;HIGH-END&nbsp;</span>
-          <span class="inline-block hero-title-word">INTERFACES </span>
+          <span class="inline-block hero-title-word">CONSTRUINDO </span>
+          <span class="inline-block hero-title-word text-brand-accent">&nbsp;SISTEMAS&nbsp;</span>
+          <span class="inline-block hero-title-word">INTELIGENTES </span>
           <br />
-          <span class="inline-block hero-title-word">POWERED BY </span>
-          <span class="inline-block hero-title-word text-gray-500">&nbsp;AI LOGIC.</span>
+          <span class="inline-block hero-title-word">E AUTOMATIZANDO </span>
+          <span class="inline-block hero-title-word text-gray-500">&nbsp;PROCESSOS.</span>
         </h1>
 
         <!-- Subtext -->
         <p class="hero-sub text-base text-gray-400 max-w-[55ch] leading-relaxed mb-8 tracking-tight mx-auto">
-          Computer Science student and IT Intern creating premium web applications with advanced interactive structures.
+          Estudante de Ciências da Computação e Estagiário de T.I. focado em desenvolvimento de software, integrações de IA e automações.
         </p>
 
         <!-- Centered Lando-Style Fade Cutout (No border, transparent bottom fade) -->
@@ -288,27 +288,27 @@ onUnmounted(() => {
         <div class="hero-sub w-full max-w-sm mb-8 double-bezel-outer text-left">
           <div class="double-bezel-inner p-4 font-mono text-[10px] text-gray-400 flex flex-col gap-2">
             <div class="flex justify-between border-b border-white/5 pb-2 text-gray-500">
-              <span>DEV_CONSOLE // ACTIVE</span>
+              <span>DEV_CONSOLE // ATIVO</span>
               <span class="flex items-center gap-1.5">
                 <span class="h-1.5 w-1.5 rounded-full bg-brand-accent animate-pulse"></span>
                 LIVE_SYNC
               </span>
             </div>
             <div class="flex justify-between mt-1">
-              <span>CURRENT_FOCUS:</span>
-              <span class="text-white">NUXT 4 / AI INTEGRATIONS</span>
+              <span>FOCO_ATUAL:</span>
+              <span class="text-white">NUXT 3 / INTEGRAÇÕES DE IA</span>
             </div>
             <div class="flex justify-between">
               <span>STATUS:</span>
-              <span class="text-brand-accent">INTERNSHIP_SEEKING</span>
+              <span class="text-brand-accent">BUSCANDO_ESTAGIO</span>
             </div>
             <div class="flex justify-between">
-              <span>LOC_TIME:</span>
-              <span class="text-white" id="live-time">00:00:00 AM</span>
+              <span>HORA_LOCAL:</span>
+              <span class="text-white" id="live-time">00:00:00</span>
             </div>
             <div class="flex justify-between">
               <span>CONTAINERS:</span>
-              <span class="text-white">4/4 RUNNING</span>
+              <span class="text-white">4/4 RODANDO</span>
             </div>
           </div>
         </div>
@@ -320,7 +320,7 @@ onUnmounted(() => {
             href="#projects"
             class="hero-cta-btn group relative flex items-center gap-3 pl-6 pr-2 py-2 rounded-full bg-white text-black text-xs font-mono tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-premium"
           >
-            view work
+            ver projetos
             <span class="w-8 h-8 rounded-full bg-black/5 dark:bg-white/10 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-[1px]">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -333,7 +333,7 @@ onUnmounted(() => {
             href="#contact"
             class="hero-cta-btn px-6 py-3.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-white text-xs font-mono tracking-widest uppercase transition-premium"
           >
-            get in touch
+            entrar em contato
           </a>
         </div>
       </div>
@@ -343,7 +343,7 @@ onUnmounted(() => {
     <section id="about" class="bento-section py-32 md:py-48 px-4 md:px-8 bg-black/40 border-y border-white/5 relative">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-3xl md:text-5xl font-display font-extrabold tracking-tighter text-white mb-16 text-center uppercase">
-          profile & trajectory
+          perfil & trajetória
         </h2>
 
         <!-- Gapless Bento Grid -->
@@ -352,14 +352,14 @@ onUnmounted(() => {
           <div class="bento-card col-span-1 md:col-span-6 double-bezel-outer h-[350px]">
             <div class="double-bezel-inner h-full p-8 flex flex-col justify-between">
               <div>
-                <span class="text-[10px] font-mono tracking-widest text-brand-accent uppercase">current role</span>
-                <h3 class="text-2xl font-display font-bold text-white tracking-tight mt-2 uppercase">IT Intern at Gaseo</h3>
+                <span class="text-[10px] font-mono tracking-widest text-brand-accent uppercase">cargo atual</span>
+                <h3 class="text-2xl font-display font-bold text-white tracking-tight mt-2 uppercase">Estagiário de T.I. na Gaseo</h3>
               </div>
               <p class="text-sm text-gray-400 leading-relaxed font-sans">
-                Developing internal dashboards in PHP to transform operational metrics into actionable data. Applying Docker and Gitflow version control in development environments.
+                Desenvolvimento de dashboards internos em PHP para transformar métricas operacionais em dados acionáveis. Aplicação de Docker e versionamento Gitflow em ambientes de desenvolvimento.
               </p>
               <div class="text-[11px] font-mono text-gray-500 uppercase tracking-widest">
-                since april 2026
+                desde abril de 2026
               </div>
             </div>
           </div>
@@ -368,12 +368,12 @@ onUnmounted(() => {
           <div class="bento-card col-span-1 md:col-span-6 double-bezel-outer h-[350px]">
             <div class="double-bezel-inner h-full p-8 flex flex-col justify-between">
               <div>
-                <span class="text-[10px] font-mono tracking-widest text-brand-accent uppercase">featured architecture</span>
+                <span class="text-[10px] font-mono tracking-widest text-brand-accent uppercase">projeto em destaque</span>
                 <h3 class="text-2xl font-display font-bold text-white tracking-tight mt-2 uppercase">Nexus Life OS</h3>
               </div>
               <div class="flex flex-col gap-2 font-mono text-[10px] text-gray-500 my-2">
                 <div class="flex justify-between border-b border-white/5 pb-1">
-                  <span>MODULES // ACTIVE</span>
+                  <span>MÓDULOS // ATIVOS</span>
                   <span class="text-brand-accent">ONLINE</span>
                 </div>
                 <div class="flex items-center justify-between text-gray-300">
@@ -382,15 +382,15 @@ onUnmounted(() => {
                 </div>
                 <div class="flex items-center justify-between text-gray-300">
                   <span>• SAFE_TO_SPEND</span>
-                  <span class="text-gray-500">FINANCE_ALGO</span>
+                  <span class="text-gray-500">MÓDULO_FINANÇAS</span>
                 </div>
                 <div class="flex items-center justify-between text-gray-300">
                   <span>• XP_STREAK_GAMER</span>
-                  <span class="text-gray-500">ROUTINE_ENGINE</span>
+                  <span class="text-gray-500">MÓDULO_ROTINA</span>
                 </div>
               </div>
               <p class="text-xs text-gray-400 leading-relaxed font-sans">
-                A personal operating system integrating serverless PostgreSQL (Neon), Drizzle ORM, and next-intl for complete internationalization.
+                Um sistema operacional pessoal integrado com banco de dados PostgreSQL serverless (Neon), Drizzle ORM e suporte a multi-idiomas.
               </p>
             </div>
           </div>
@@ -399,14 +399,14 @@ onUnmounted(() => {
           <div class="bento-card col-span-1 md:col-span-8 double-bezel-outer h-[300px]">
             <div class="double-bezel-inner h-full p-8 flex flex-col justify-between">
               <div>
-                <span class="text-[10px] font-mono tracking-widest text-brand-accent uppercase">academic background</span>
-                <h3 class="text-2xl font-display font-bold text-white tracking-tight mt-2 uppercase">computer science / unip</h3>
+                <span class="text-[10px] font-mono tracking-widest text-brand-accent uppercase">formação acadêmica</span>
+                <h3 class="text-2xl font-display font-bold text-white tracking-tight mt-2 uppercase">ciências da computação / unip</h3>
               </div>
               <p class="text-sm text-gray-400 leading-relaxed font-sans">
-                Pursuing a Bachelor of Computer Science, building solid fundamentals in algorithms, software architecture, and artificial intelligence integration.
+                Cursando Bacharelado em Ciências da Computação, construindo bases sólidas em algoritmos, arquitetura de software e integrações de inteligência artificial.
               </p>
               <div class="text-[11px] font-mono text-gray-500 uppercase tracking-widest">
-                limeira, sp, brazil
+                limeira, sp, brasil
               </div>
             </div>
           </div>
@@ -415,14 +415,14 @@ onUnmounted(() => {
           <div class="bento-card col-span-1 md:col-span-4 double-bezel-outer h-[300px]">
             <div class="double-bezel-inner h-full p-8 flex flex-col justify-between">
               <div>
-                <span class="text-[10px] font-mono tracking-widest text-brand-accent uppercase">focus</span>
-                <h3 class="text-xl font-display font-bold text-white tracking-tight mt-2 uppercase">autodidactism</h3>
+                <span class="text-[10px] font-mono tracking-widest text-brand-accent uppercase">foco & filosofia</span>
+                <h3 class="text-xl font-display font-bold text-white tracking-tight mt-2 uppercase">autodidatismo</h3>
               </div>
               <p class="text-xs text-gray-400 leading-relaxed font-sans">
-                Constantly learning and shipping production apps. Specializing in high-performance Web APIs, generative AI integration, and fluid UX workflows.
+                Aprendizado contínuo e desenvolvimento de aplicações em produção. Foco em APIs web de alta performance e automações inteligentes.
               </p>
               <div class="text-[11px] font-mono text-brand-accent uppercase tracking-widest">
-                driven by code
+                movido por código
               </div>
             </div>
           </div>
@@ -434,7 +434,7 @@ onUnmounted(() => {
     <section id="projects" class="py-32 md:py-48 px-4 md:px-8 relative">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-3xl md:text-5xl font-display font-extrabold tracking-tighter text-white mb-16 text-center uppercase">
-          selected works
+          projetos selecionados
         </h2>
 
         <!-- Projects List (Double Bezel Stack) -->
@@ -466,7 +466,7 @@ onUnmounted(() => {
                   target="_blank" 
                   class="group flex items-center justify-center gap-3 px-6 py-3.5 rounded-full bg-white/5 border border-white/10 hover:bg-white text-white hover:text-black text-xs font-mono tracking-widest uppercase transition-premium"
                 >
-                  visit project
+                  visitar projeto
                   <span class="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-[1px]">↗</span>
                 </a>
               </div>
@@ -524,7 +524,7 @@ onUnmounted(() => {
     <section id="skills" class="skills-section py-32 md:py-48 px-4 md:px-8 bg-black/40 border-t border-white/5 relative">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-3xl md:text-5xl font-display font-extrabold tracking-tighter text-white mb-16 text-center uppercase">
-          tech stack & capabilities
+          tecnologias & competências
         </h2>
 
         <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
@@ -549,10 +549,10 @@ onUnmounted(() => {
 
       <div class="max-w-4xl mx-auto z-10 relative">
         <h2 class="text-[clamp(2.5rem,5vw,4.5rem)] font-display font-extrabold tracking-tighter text-white mb-8 leading-none uppercase">
-          let's create <br />something new
+          vamos criar <br />algo novo
         </h2>
         <p class="text-base text-gray-400 max-w-[50ch] mx-auto leading-relaxed mb-12">
-          Interested in working together or hiring me for an internship? Feel free to reach out via email or connect with me.
+          Interessado em trabalharmos juntos ou em me contratar para um estágio? Sinta-se à vontade para entrar em contato via e-mail ou redes sociais.
         </p>
 
         <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-20">
@@ -560,7 +560,7 @@ onUnmounted(() => {
             href="mailto:isaquediass33@gmail.com" 
             class="group w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-white text-black text-xs font-mono tracking-widest uppercase hover:bg-brand-accent hover:text-white transition-premium"
           >
-            send email
+            enviar e-mail
             <span>↗</span>
           </a>
           <a 

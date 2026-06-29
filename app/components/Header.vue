@@ -147,7 +147,7 @@ onMounted(() => {
             class="px-3 py-1.5 text-xs font-mono tracking-widest transition-colors duration-300 uppercase rounded-full"
             :class="activeSection === 'hero' ? 'text-brand-accent bg-white/5 border border-white/5 shadow-inner' : 'text-gray-400 hover:text-white'"
           >
-            home
+            início
           </a>
           <a 
             href="#about" 
@@ -156,7 +156,7 @@ onMounted(() => {
             class="px-3 py-1.5 text-xs font-mono tracking-widest transition-colors duration-300 uppercase rounded-full"
             :class="activeSection === 'about' ? 'text-brand-accent bg-white/5 border border-white/5 shadow-inner' : 'text-gray-400 hover:text-white'"
           >
-            about
+            sobre
           </a>
           <a 
             href="#projects" 
@@ -165,7 +165,7 @@ onMounted(() => {
             class="px-3 py-1.5 text-xs font-mono tracking-widest transition-colors duration-300 uppercase rounded-full"
             :class="activeSection === 'projects' ? 'text-brand-accent bg-white/5 border border-white/5 shadow-inner' : 'text-gray-400 hover:text-white'"
           >
-            projects
+            projetos
           </a>
           <a 
             href="#skills" 
@@ -174,7 +174,7 @@ onMounted(() => {
             class="px-3 py-1.5 text-xs font-mono tracking-widest transition-colors duration-300 uppercase rounded-full"
             :class="activeSection === 'skills' ? 'text-brand-accent bg-white/5 border border-white/5 shadow-inner' : 'text-gray-400 hover:text-white'"
           >
-            skills
+            competências
           </a>
           <a 
             href="#contact" 
@@ -183,7 +183,7 @@ onMounted(() => {
             class="px-3 py-1.5 text-xs font-mono tracking-widest transition-colors duration-300 uppercase rounded-full"
             :class="activeSection === 'contact' ? 'text-brand-accent bg-white/5 border border-white/5 shadow-inner' : 'text-gray-400 hover:text-white'"
           >
-            contact
+            contato
           </a>
         </nav>
 
@@ -193,7 +193,7 @@ onMounted(() => {
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-accent"></span>
           </span>
-          <span class="text-[10px] font-mono tracking-widest text-gray-400 uppercase">available for work</span>
+          <span class="text-[10px] font-mono tracking-widest text-gray-400 uppercase">disponível para oportunidades</span>
         </div>
 
         <!-- Mobile Menu Trigger -->
@@ -232,7 +232,7 @@ onMounted(() => {
           class="text-4xl font-display font-medium tracking-tight hover:text-brand-accent transition-colors duration-300 uppercase"
           :class="activeSection === 'hero' ? 'text-brand-accent font-bold' : 'text-white'"
         >
-          home
+          início
         </a>
         <a 
           :ref="setLinkRef"
@@ -241,7 +241,7 @@ onMounted(() => {
           class="text-4xl font-display font-medium tracking-tight hover:text-brand-accent transition-colors duration-300 uppercase"
           :class="activeSection === 'about' ? 'text-brand-accent font-bold' : 'text-white'"
         >
-          about
+          sobre
         </a>
         <a 
           :ref="setLinkRef"
@@ -250,7 +250,7 @@ onMounted(() => {
           class="text-4xl font-display font-medium tracking-tight hover:text-brand-accent transition-colors duration-300 uppercase"
           :class="activeSection === 'projects' ? 'text-brand-accent font-bold' : 'text-white'"
         >
-          projects
+          projetos
         </a>
         <a 
           :ref="setLinkRef"
@@ -259,7 +259,7 @@ onMounted(() => {
           class="text-4xl font-display font-medium tracking-tight hover:text-brand-accent transition-colors duration-300 uppercase"
           :class="activeSection === 'skills' ? 'text-brand-accent font-bold' : 'text-white'"
         >
-          skills
+          competências
         </a>
         <a 
           :ref="setLinkRef"
@@ -268,7 +268,7 @@ onMounted(() => {
           class="text-4xl font-display font-medium tracking-tight hover:text-brand-accent transition-colors duration-300 uppercase"
           :class="activeSection === 'contact' ? 'text-brand-accent font-bold' : 'text-white'"
         >
-          contact
+          contato
         </a>
       </div>
     </div>
