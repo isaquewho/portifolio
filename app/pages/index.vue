@@ -272,7 +272,8 @@ onUnmounted(() => {
             <img 
               src="/isaque_hero_optimized.jpg" 
               alt="Isaque Araujo" 
-              class="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              class="absolute inset-0 w-full h-full object-cover pointer-events-none transition-opacity duration-300"
+              :class="isHoveringPhoto ? 'opacity-100' : 'opacity-0'"
               :style="maskStyle"
             />
             <!-- Custom info overlay -->
@@ -493,6 +494,7 @@ onUnmounted(() => {
                       v-if="project.video || project.webm"
                       :ref="el => { if (el) videoRefs[index] = el as HTMLVideoElement }"
                       :poster="project.image"
+                      preload="metadata"
                       loop
                       muted
                       playsinline
