@@ -13,7 +13,8 @@ const projects = [
     link: 'https://nexus-life-os-web.vercel.app/pt-BR',
     role: 'Criador & Desenvolvedor Principal',
     video: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/nexus_life_os_demo.mp4',
-    webm: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/nexus_life_os_demo.webm'
+    webm: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/nexus_life_os_demo.webm',
+    image: '/nexus_life_os_mockup.jpg'
   },
   {
     title: 'CASA DE KISAVITA',
@@ -23,7 +24,7 @@ const projects = [
     role: 'Desenvolvedor Full Stack',
     video: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/kisavita_demo.mp4',
     webm: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/kisavita_demo.webm',
-    image: '/kisavita_mockup.png'
+    image: '/kisavita_mockup.jpg'
   }
 ]
 
@@ -489,7 +490,7 @@ onUnmounted(() => {
                   </div>
                   <!-- Content Body -->
                   <div class="relative w-full aspect-video overflow-hidden bg-black flex items-center justify-center">
-                    <!-- If video is defined -->
+                    <!-- Video: Only displayed and played on desktop (lg:block) -->
                     <video 
                       v-if="project.video || project.webm"
                       :ref="el => { if (el) videoRefs[index] = el as HTMLVideoElement }"
@@ -498,17 +499,18 @@ onUnmounted(() => {
                       loop
                       muted
                       playsinline
-                      class="w-full h-full object-cover"
+                      class="hidden lg:block w-full h-full object-cover"
                     >
                       <source v-if="project.webm" :src="project.webm" type="video/webm" />
                       <source v-if="project.video" :src="project.video" type="video/mp4" />
                     </video>
-                    <!-- If image is defined -->
+                    <!-- Static Image Mockup: Displayed on mobile/tablet (lg:hidden) or if no video exists -->
                     <img 
-                      v-else-if="project.image"
+                      v-if="project.image"
                       :src="project.image"
                       alt="Project Preview"
                       class="w-full h-full object-cover"
+                      :class="{ 'lg:hidden': project.video || project.webm }"
                       loading="lazy"
                     />
                   </div>
