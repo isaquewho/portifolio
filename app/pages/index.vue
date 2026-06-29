@@ -12,8 +12,8 @@ const projects = [
     stack: ['Next.js 16', 'React 19', 'PostgreSQL', 'Drizzle ORM', 'Clerk', 'Tailwind CSS v4'],
     link: 'https://nexus-life-os-web.vercel.app/pt-BR',
     role: 'Creator & Lead Developer',
-    video: '/nexus_life_os_demo.mp4',
-    webm: '/nexus_life_os_demo.webm'
+    video: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/nexus_life_os_demo.mp4',
+    webm: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/nexus_life_os_demo.webm'
   },
   {
     title: 'CASA DE KISAVITA',
@@ -21,8 +21,8 @@ const projects = [
     stack: ['JavaScript (ES6+)', 'HTML5', 'CSS3', 'Firebase Firestore'],
     link: 'https://restaurante-kisavita.vercel.app',
     role: 'Full Stack Developer',
-    video: '/kisavita_demo.mp4',
-    webm: '/kisavita_demo.webm',
+    video: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/kisavita_demo.mp4',
+    webm: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/kisavita_demo.webm',
     image: '/kisavita_mockup.png'
   }
 ]
