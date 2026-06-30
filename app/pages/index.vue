@@ -13,8 +13,7 @@ const projects = [
     link: 'https://nexus-life-os-web.vercel.app/pt-BR',
     role: 'Criador & Desenvolvedor Principal',
     video: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/nexus_life_os_demo.mp4',
-    webm: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/nexus_life_os_demo.webm',
-    image: '/nexus_life_os_mockup.jpg'
+    webm: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/nexus_life_os_demo.webm'
   },
   {
     title: 'CASA DE KISAVITA',
@@ -23,8 +22,7 @@ const projects = [
     link: 'https://restaurante-kisavita.vercel.app',
     role: 'Desenvolvedor Full Stack',
     video: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/kisavita_demo.mp4',
-    webm: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/kisavita_demo.webm',
-    image: '/kisavita_mockup.jpg'
+    webm: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/kisavita_demo.webm'
   }
 ]
 
