@@ -45,7 +45,20 @@ const mouseY = ref(0)
 const isHoveringPhoto = ref(false)
 
 const videoRefs = ref<HTMLVideoElement[]>([])
+const playingStates = ref<Record<number, boolean>>({})
 let videoObserver: IntersectionObserver | null = null
+
+const togglePlay = (index: number) => {
+  const video = videoRefs.value[index]
+  if (!video) return
+  if (video.paused) {
+    video.play().catch(() => {})
+    playingStates.value[index] = true
+  } else {
+    video.pause()
+    playingStates.value[index] = false
+  }
+}
 
 const handleMouseMove = (e: MouseEvent) => {
   if (!photoContainer.value) return
@@ -181,15 +194,17 @@ onMounted(() => {
   clockInterval = setInterval(updateClock, 1000)
   updateClock()
 
-  // Intersection Observer for autoplay videos
+  // Intersection Observer to pause off-screen videos
   if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
     videoObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         const video = entry.target as HTMLVideoElement
-        if (entry.isIntersecting) {
-          video.play().catch(() => {})
-        } else {
+        if (!entry.isIntersecting) {
           video.pause()
+          const index = videoRefs.value.indexOf(video)
+          if (index !== -1) {
+            playingStates.value[index] = false
+          }
         }
       })
     }, {
@@ -200,14 +215,6 @@ onMounted(() => {
 
     videoRefs.value.forEach((video) => {
       if (video) videoObserver?.observe(video)
-    })
-  } else {
-    // Fallback for older browsers
-    videoRefs.value.forEach((video) => {
-      if (video) {
-        video.setAttribute('autoplay', 'true')
-        video.play().catch(() => {})
-      }
     })
   }
 })
@@ -487,17 +494,17 @@ onUnmounted(() => {
                     <div class="w-8"></div>
                   </div>
                   <!-- Content Body -->
-                  <div class="relative w-full aspect-video overflow-hidden bg-black flex items-center justify-center">
+                  <div class="relative w-full aspect-video overflow-hidden bg-black flex items-center justify-center group/video">
                     <!-- Video (Plays on all screens) -->
                     <video 
                       v-if="project.video || project.webm"
                       :ref="el => { if (el) videoRefs[index] = el as HTMLVideoElement }"
-                      :poster="project.image"
-                      preload="metadata"
+                      preload="auto"
                       loop
                       muted
                       playsinline
-                      class="w-full h-full object-cover"
+                      class="w-full h-full object-cover cursor-pointer"
+                      @click="togglePlay(index)"
                     >
                       <source v-if="project.webm" :src="project.webm" type="video/webm" />
                       <source v-if="project.video" :src="project.video" type="video/mp4" />
@@ -510,6 +517,28 @@ onUnmounted(() => {
                       class="w-full h-full object-cover"
                       loading="lazy"
                     />
+
+                    <!-- Custom Play/Pause Overlay Button -->
+                    <div 
+                      v-if="project.video || project.webm"
+                      class="absolute inset-0 flex items-center justify-center bg-black/25 cursor-pointer transition-colors duration-300 pointer-events-none"
+                      :class="playingStates[index] ? 'bg-transparent' : 'bg-black/40'"
+                    >
+                      <button 
+                        class="w-14 h-14 rounded-full bg-black/70 border border-white/10 backdrop-blur-md flex items-center justify-center text-white transition-all duration-300 shadow-2xl pointer-events-auto hover:scale-105 active:scale-95"
+                        :class="playingStates[index] ? 'opacity-0 scale-75 lg:group-hover/video:opacity-100 lg:group-hover/video:scale-100' : 'opacity-100 scale-100'"
+                        @click="togglePlay(index)"
+                      >
+                        <!-- Play Icon (when paused) -->
+                        <svg v-if="!playingStates[index]" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current text-brand-accent ml-0.5" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                        <!-- Pause Icon (shown on hover when playing) -->
+                        <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current text-white" viewBox="0 0 24 24">
+                          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
