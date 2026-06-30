@@ -490,7 +490,7 @@ onUnmounted(() => {
                   </div>
                   <!-- Content Body -->
                   <div class="relative w-full aspect-video overflow-hidden bg-black flex items-center justify-center">
-                    <!-- Video: Only displayed and played on desktop (lg:block) -->
+                    <!-- Video (Plays on all screens) -->
                     <video 
                       v-if="project.video || project.webm"
                       :ref="el => { if (el) videoRefs[index] = el as HTMLVideoElement }"
@@ -499,18 +499,17 @@ onUnmounted(() => {
                       loop
                       muted
                       playsinline
-                      class="hidden lg:block w-full h-full object-cover"
+                      class="w-full h-full object-cover"
                     >
                       <source v-if="project.webm" :src="project.webm" type="video/webm" />
                       <source v-if="project.video" :src="project.video" type="video/mp4" />
                     </video>
-                    <!-- Static Image Mockup: Displayed on mobile/tablet (lg:hidden) or if no video exists -->
+                    <!-- Static Image Mockup (Fallback if video is not defined) -->
                     <img 
-                      v-if="project.image"
+                      v-else-if="project.image"
                       :src="project.image"
                       alt="Project Preview"
                       class="w-full h-full object-cover"
-                      :class="{ 'lg:hidden': project.video || project.webm }"
                       loading="lazy"
                     />
                   </div>
