@@ -1,24 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   html {
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    scroll-behavior: auto; /* Handled by Lenis */
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    scroll-behavior: auto;
     background-color: #050505;
-    color: #f3f4f6;
+    color: #e5e7eb;
+    -webkit-font-smoothing: antialiased;
   }
 
   body {
     overflow-x: hidden;
     width: 100%;
-    max-width: 100%;
   }
 
-  /* Custom Scrollbar */
+  ::selection {
+    background: #ccff00;
+    color: #050505;
+  }
+
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -26,31 +28,67 @@
     background: #050505;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1f2937;
+    background: #262626;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #ccff00;
   }
+
+  :focus-visible {
+    outline: 2px solid #ccff00;
+    outline-offset: 3px;
+  }
 }
 
-/* Custom easing class for premium feel */
-.transition-premium {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
-  transition-duration: 700ms;
+@layer components {
+  .eyebrow {
+    @apply text-[11px] font-mono tracking-[0.2em] uppercase text-brand-accent;
+  }
+
+  .card {
+    @apply rounded-2xl border border-white/[0.08] bg-white/[0.03];
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-xs font-mono tracking-[0.15em] uppercase transition-all duration-500;
+    transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .btn-primary {
+    @apply btn bg-white text-black hover:bg-brand-accent;
+  }
+  .btn-ghost {
+    @apply btn border border-white/10 bg-white/5 text-white hover:bg-white/10 hover:border-white/20;
+  }
+
+  .tag {
+    @apply text-[10px] font-mono tracking-wider px-2.5 py-1 rounded-full bg-white/5 border border-white/[0.06] text-gray-300;
+  }
 }
 
-/* Double-Bezel Nested Architecture */
-.double-bezel-outer {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 6px;
-  border-radius: 2rem;
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-.double-bezel-inner {
-  background: #0a0a0a;
-  border-radius: calc(2rem - 6px);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .no-print,
+  .grain::after {
+    display: none !important;
+  }
+  html, body {
+    background: #fff !important;
+  }
 }

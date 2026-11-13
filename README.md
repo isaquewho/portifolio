@@ -1,75 +1,27 @@
-# Nuxt Minimal Starter
+# Portfólio — Isaque Araujo
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Site pessoal em [isaque-araujo.vercel.app](https://isaque-araujo.vercel.app): projetos, experiência e currículo.
 
-## Setup
+**Stack:** Nuxt 4 · Vue 3 · TypeScript · Tailwind CSS · GSAP + Lenis · Three.js (campo de partículas do hero) · Vercel.
 
-Make sure to install dependencies:
+## Estrutura
+
+- `app/data/perfil.ts` — única fonte de conteúdo (perfil, experiência, projetos, competências, formação). A home e a página `/curriculo` leem daqui.
+- `app/pages/index.vue` — home.
+- `app/pages/curriculo.vue` — currículo em HTML com estilo de impressão (gera o PDF em `public/`).
+- `app/components/HeroScene.vue` — cena Three.js (desligada em telas < 768 px e com `prefers-reduced-motion`).
+
+## Rodando
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Atualizar o PDF do currículo
 
-Build the application for production:
+Com o servidor de desenvolvimento rodando:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+npm run cv:pdf
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
