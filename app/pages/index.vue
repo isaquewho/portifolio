@@ -120,8 +120,8 @@ const anoAtual = new Date().getFullYear()
 
         <dl class="hero-fade mt-14 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.06] border border-white/[0.06] rounded-2xl overflow-hidden">
           <div class="bg-brand-dark p-5">
-            <dt class="eyebrow">Sistemas</dt>
-            <dd class="mt-2 font-display text-2xl text-white">4 em produção</dd>
+            <dt class="eyebrow">Produtos próprios</dt>
+            <dd class="mt-2 font-display text-2xl text-white">2 em produção</dd>
           </div>
           <div class="bg-brand-dark p-5">
             <dt class="eyebrow">Atualmente</dt>

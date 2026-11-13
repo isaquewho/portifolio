@@ -8,7 +8,7 @@ export const perfil = {
   github: 'https://github.com/isaquewho',
   site: 'https://isaque-araujo.vercel.app',
   resumo:
-    'Estudante de Ciências da Computação e estagiário de T.I. na Gaseo, onde mantenho e evoluo sistemas internos em produção (PHP, NestJS e Angular). Fora do trabalho, construo produtos próprios do design à infraestrutura: um life OS financeiro com IA, um simulador de circuitos que roda ngspice no navegador e um sistema de delivery em uso por um restaurante.',
+    'Estudante de Ciências da Computação e estagiário de T.I. na Gaseo, onde mantenho e evoluo sistemas internos em produção (PHP, NestJS e Angular). Fora do trabalho, construo produtos próprios do design à infraestrutura: um life OS financeiro com IA e um sistema de delivery em uso por um restaurante.',
   disponibilidade: 'Aberto a vagas de estágio e júnior',
 }
 
@@ -64,20 +64,6 @@ export const projetos: Projeto[] = [
     webm: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/nexus_life_os_demo.webm',
   },
   {
-    slug: 'circuit-lab',
-    titulo: 'Circuit Lab',
-    categoria: 'Projeto acadêmico · Engenharia',
-    descricao:
-      'Simulador educacional de circuitos eletrônicos 100% no navegador: editor de esquemas em SVG, biblioteca com modelos SPICE reais e simulação com ngspice compilado para WebAssembly.',
-    destaques: [
-      'Motor ngspice em Web Worker, sem servidor; instrumentos virtuais (osciloscópio, multímetro, gerador de sinais).',
-      'Conectividade elétrica calculada da geometria do esquema (semântica KiCad) e projetos versionados com migrações de formato.',
-      '174 testes unitários e de integração contra referências analíticas, 35 testes end-to-end com Playwright e auditoria de acessibilidade com axe.',
-    ],
-    stack: ['React 19', 'Vite', 'TypeScript', 'WebAssembly', 'ngspice', 'Web Workers', 'uPlot', 'Vitest', 'Playwright'],
-    status: 'Em desenvolvimento',
-  },
-  {
     slug: 'casa-de-kisavita',
     titulo: 'Casa de KisaVita',
     categoria: 'Cliente real · Delivery',
@@ -92,19 +78,6 @@ export const projetos: Projeto[] = [
     status: 'Em produção',
     video: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/kisavita_demo.mp4',
     webm: 'https://ydl44u2e7tjee9xl.public.blob.vercel-storage.com/kisavita_demo.webm',
-  },
-  {
-    slug: 'central-gaseo',
-    titulo: 'Central Gaseo',
-    categoria: 'Trabalho · Plataforma interna',
-    descricao:
-      'Plataforma interna da Gaseo usada diariamente pelos colaboradores: chat e tickets de suporte, processo admissional, agendamento de veículos, visitas técnicas, feedback e módulos de SST.',
-    destaques: [
-      'Assistente de suporte com IA (AnythingLLM) que responde tickets usando os manuais do sistema como base de conhecimento.',
-      'Autenticação Google OAuth 2.0, notificações Web Push e e-mails transacionais.',
-    ],
-    stack: ['PHP', 'MySQL', 'Google OAuth', 'Web Push', 'AnythingLLM'],
-    status: 'Em produção (interno)',
   },
 ]
 
